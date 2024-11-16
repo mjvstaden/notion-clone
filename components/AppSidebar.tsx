@@ -67,8 +67,7 @@ function AppSidebar() {
             ...roomData,
           })
         }
-        console.log('acc: ', acc);
-
+        
         return acc;
       }, {
         owner: [],
@@ -100,6 +99,14 @@ function AppSidebar() {
         )}
       </div>
       {/* Shared with me */}
+      <>
+          <h2 className="text-gray-500 font-semibold text-sm">
+            Shared with me
+          </h2>
+          {groupedData.editor.map((doc) => (
+            <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`}/>
+          ))}
+      </>
     </>
   );
 
